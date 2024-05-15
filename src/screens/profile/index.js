@@ -1,14 +1,12 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 
-const Profile = ({navigation, route}) => {
-    const {isFromHome} = route.params;
+const Profile = ({navigation}) => {
     return (
         <View>
             <Text>Profile</Text>
-            <Text>isFromHome: {isFromHome ? 'yes' : 'no'}</Text>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text>Go Back</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Posts")}>
+                <Text>Go to Posts</Text>
             </TouchableOpacity>
         </View>
     );

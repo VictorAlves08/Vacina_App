@@ -20,7 +20,7 @@ const BottomTabs = () => {
                 }}
             />
             <BottomTab.Screen
-                name="ProfileTab"
+                name="Profile"
                 component={ProfileStackNavigation}
                 options={{
                     header: () => null,

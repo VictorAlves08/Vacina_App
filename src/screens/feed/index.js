@@ -8,7 +8,7 @@ const Feed = ({navigation}) => {
             <TouchableOpacity onPress={() => navigation.navigate('Stories')}>
                 <Text>Go to Stories</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('ProfileTab', {
+            <TouchableOpacity onPress={() => navigation.navigate('Profile', {
                 screen: "Posts"
             })}>
                 <Text>Go to Posts</Text>

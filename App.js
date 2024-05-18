@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'styled-components/native';
 import useAppearance from './src/hooks/useAppearance';
 
-import BottomTabs from './src/navigation/bottomTabs';
+import Routes from './src/navigation/index';
 
 export default function App() {
     const {theme} = useAppearance();
@@ -12,7 +12,7 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <NavigationContainer>
-                <BottomTabs />
+                <Routes />
             </NavigationContainer>
         </ThemeProvider>
     );

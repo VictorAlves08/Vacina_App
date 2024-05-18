@@ -1,12 +1,12 @@
-import React, {useContext} from 'react';
-
-import {AuthContext} from '../context/Auth/index';
+import React from 'react';
 
 import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
 import SignInNavigator from './SignInNavigator/index';
 
+import useAuth from '../hooks/useAuth';
+
 const Routes = () => {
-    const {isLoggedIn} = useContext(AuthContext);
+    const {isLoggedIn} = useAuth();
 
     return isLoggedIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };

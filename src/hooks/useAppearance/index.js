@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import {Appearance} from 'react-native';
-import {themeDark, themeLight, themeTypes} from '../constants/themes';
+import {themeDark, themeLight, themeTypes} from '../../constants/themes';
 
 const useAppearance = () => {
     const [currentTypeTheme, setCurrentTypeTheme] = useState(

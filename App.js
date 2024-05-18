@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'styled-components/native';
 import useAppearance from './src/hooks/useAppearance';
 
-import Routes from './src/navigation/index';
+import Routes from './src/navigation';
 import {AuthProvider} from './src/context/Auth';
 
 export default function App() {

@@ -16,7 +16,7 @@ const BottomTabNavigator = () => {
                 component={Home}
                 options={{
                     header: () => null,
-                    tabBarIcon: () => <Text>Home</Text>,
+                    tabBarIcon: () => <Text>HomeIcon</Text>,
                 }}
             />
             <BottomTab.Screen
@@ -24,7 +24,7 @@ const BottomTabNavigator = () => {
                 component={Profile}
                 options={{
                     header: () => null,
-                    tabBarIcon: () => <Text>Profile</Text>,
+                    tabBarIcon: () => <Text>ProfileIcon</Text>,
                 }}
             />
         </BottomTab.Navigator>

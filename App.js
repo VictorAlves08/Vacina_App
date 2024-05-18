@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components/native';
 import useAppearance from './src/hooks/useAppearance';
 
 import Routes from './src/navigation/index';
+import {AuthProvider} from './src/context/Auth';
 
 export default function App() {
     const {theme} = useAppearance();
@@ -12,7 +13,9 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <NavigationContainer>
-                <Routes />
+                <AuthProvider>
+                    <Routes />
+                </AuthProvider>
             </NavigationContainer>
         </ThemeProvider>
     );

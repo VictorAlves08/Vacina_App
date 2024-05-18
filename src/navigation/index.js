@@ -1,17 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 
-import BottomTabNavigator from './signedInNavigator/BottomTabNavigator';
-import SignInNavigator from './signInNavigator/index';
-import {DevSettings} from 'react-native';
+import {AuthContext} from '../context/Auth/index';
+
+import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
+import SignInNavigator from './SignInNavigator/index';
 
 const Routes = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-        DevSettings.addMenuItem('Change Routes', () =>
-            setIsLoggedIn(prevState => !prevState),
-        );
-    }, []);
+    const {isLoggedIn} = useContext(AuthContext);
 
     return isLoggedIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };

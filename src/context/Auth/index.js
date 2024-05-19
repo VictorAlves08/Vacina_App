@@ -1,21 +1,33 @@
-import React, {useState, useEffect, createContext} from 'react';
-import {DevSettings} from 'react-native';
+import React, {useState, createContext} from 'react';
 
-export const AuthContext = createContext({
-    isLoggedIn: false,
-});
+export const AuthContext = createContext({});
 
 export const AuthProvider = ({children}) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [userData, setUserData] = useState(null);
+    const [isSignedIn, setSignedIn] = useState(false);
 
-    useEffect(() => {
-        DevSettings.addMenuItem('Change Routes', () =>
-            setIsLoggedIn(prevState => !prevState),
-        );
-    }, []);
+    const sigIn = async () => {
+        setIsLoading(true);
+
+        setSignedIn(true);
+        setUserData({id: 1, name: 'Victor', email: 'victor@gmail.com'});
+
+        setIsLoading(false);
+    };
+
+    const sigOut = async () => {
+        setIsLoading(true);
+
+        setSignedIn(false);
+        setUserData(null);
+
+        setIsLoading(false);
+    };
 
     return (
-        <AuthContext.Provider value={{isLoggedIn}}>
+        <AuthContext.Provider
+            value={{isSignedIn, userData, isLoading, sigIn, sigOut}}>
             {children}
         </AuthContext.Provider>
     );

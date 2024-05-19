@@ -6,9 +6,9 @@ import SignInNavigator from './SignInNavigator/index';
 import useAuth from '../hooks/useAuth';
 
 const Routes = () => {
-    const {isLoggedIn} = useAuth();
+    const {isSignedIn} = useAuth();
 
-    return isLoggedIn ? <BottomTabNavigator /> : <SignInNavigator />;
+    return isSignedIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };
 
 export default Routes;

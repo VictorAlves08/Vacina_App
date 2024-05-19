@@ -1,11 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, Button} from 'react-native';
+
+import useAuth from '../../../hooks/useAuth';
 
 const OnBoarding = () => {
+    const {sigIn} = useAuth();
     return (
-        <View>
-            <Text>OnBoarding</Text>
-        </View>
+        <SafeAreaView>
+            <Button onPress={sigIn} title="sigIn" />
+        </SafeAreaView>
     );
 };
 

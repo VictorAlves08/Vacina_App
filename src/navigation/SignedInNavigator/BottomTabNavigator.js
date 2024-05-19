@@ -3,8 +3,8 @@ import {Text} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Home from '../../screens/signedIn/Home/index';
-import Profile from '../../screens/signedIn/Profile/index';
+import Home from '../../screens/SignedIn/Home';
+import Profile from '../../screens/SignedIn/Profile';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -12,18 +12,16 @@ const BottomTabNavigator = () => {
     return (
         <BottomTab.Navigator>
             <BottomTab.Screen
-                name="home"
+                name="Home"
                 component={Home}
                 options={{
-                    header: () => null,
                     tabBarIcon: () => <Text>HomeIcon</Text>,
                 }}
             />
             <BottomTab.Screen
-                name="profile"
+                name="Profile"
                 component={Profile}
                 options={{
-                    header: () => null,
                     tabBarIcon: () => <Text>ProfileIcon</Text>,
                 }}
             />
